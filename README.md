@@ -1,3 +1,11 @@
+## TODO
+
+- logo in navbar
+- banner image / home page
+- icons social
+- home banner image
+- update colors and text
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

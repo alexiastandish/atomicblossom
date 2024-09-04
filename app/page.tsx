@@ -1,33 +1,37 @@
-import Container from './components/Container'
-import HomeBanner from './components/HomeBanner'
-import ProductCard from './components/products/ProductCard'
-import { products } from '../utils/products-old'
+import CollectionsHero from "./components/CollectionsHero";
+import HomeBanner from "./components/HomeBanner";
+// import CollectionsHero from "./components/CollectionsHero";
 
 export default function Home() {
-    console.log('products', products)
-    return (
-        <div className="p-8">
-            <Container>
-                <div className="">
-                    <HomeBanner />
-                </div>
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap:8">
-                    {products?.length &&
-                        products.map((product: any) => {
-                            console.log('HEEERE', product)
-                            return (
-                                <ProductCard
-                                    key={product.id}
-                                    title={product.name}
-                                    image={product.images?.[0]?.image}
-                                    reviews={product.reviews}
-                                    price={product.price}
-                                    data={product}
-                                />
-                            )
-                        })}
-                </div>
-            </Container>
+  return (
+    <div className="m-0 overflow-x-hidden">
+      <HomeBanner />
+      <CollectionsHero />
+      {/* <div className="hero bg-base-200 min-h-screen relative">
+        <div
+          className="bg-white absolute top-0 w-screen h-20 z-3"
+          style={{
+            background:
+              "linear-gradient(to bottom, white 0%, transparent 100%)",
+          }}
+        />
+        <div className="hero-content flex-col lg:flex-row">
+          <img
+            src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
+            className="max-w-sm rounded-lg shadow-2xl"
+          />
+          <div>
+            <h1 className="text-5xl font-bold">Box Office News!</h1>
+            <p className="py-6">
+              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
+              et a id nisi.
+            </p>
+            <button className="btn btn-primary">Get Started</button>
+          </div>
         </div>
-    )
+      </div> */}
+      {/* </Container> */}
+    </div>
+  );
 }

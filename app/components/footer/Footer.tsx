@@ -10,7 +10,7 @@ export default function Footer() {
       <Container>
         <div className="flex flex-col md:flex-row justify-between pt-16 pb-8">
           <FooterList>
-            <h3 className="text-base font-bold mb-2">Shop Categories</h3>
+            <h3 className="text-base font-bold mb-2">Shop Collections</h3>
             <Link href="#">Shelves</Link>
             <Link href="#">Jewlery</Link>
             <Link href="#">Tables</Link>

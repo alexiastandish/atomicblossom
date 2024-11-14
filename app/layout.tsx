@@ -8,6 +8,9 @@ import CartProvider from "@/providers/CartProvider";
 import { Toaster } from "react-hot-toast";
 import getCurrentUser from "@/actions/getCurrentUser";
 import React from "react";
+import DesignerContextProvider, {
+  DesignerContext,
+} from "./components/context/DesignerContext";
 // const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
@@ -34,22 +37,24 @@ export default async function RootLayout({
         <link rel="stylesheet" href="https://use.typekit.net/ydd2wia.css" />
       </head>
       <body className={`overscroll-none`}>
-        <Toaster
-          toastOptions={{
-            style: {
-              background: "pink",
-              color: "white",
-            },
-          }}
-        />
-        <CartProvider currentUser={currentUser}>
-          {/* <div className="flex flex-col min-h-screen"> */}
-          <div className="flex flex-col  min-h-screen">
-            <Navbar currentUser={currentUser} />
-            <main className="flex-grow">{children}</main>
-            <Footer />
-          </div>
-        </CartProvider>
+        <DesignerContextProvider>
+          <Toaster
+            toastOptions={{
+              style: {
+                background: "pink",
+                color: "white",
+              },
+            }}
+          />
+          <CartProvider currentUser={currentUser}>
+            {/* <div className="flex flex-col min-h-screen"> */}
+            <div className="flex flex-col  min-h-screen">
+              <Navbar currentUser={currentUser} />
+              <main className="flex-grow">{children}</main>
+              <Footer />
+            </div>
+          </CartProvider>
+        </DesignerContextProvider>
       </body>
     </html>
   );

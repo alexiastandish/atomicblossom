@@ -9,8 +9,6 @@ const useDndForm = ({ name }) => {
       const dndFormId = await createDndForm({ name });
       toast.success(`${name} created!`);
       return router.push(`customizations/builder/${dndFormId}`);
-
-      console.log("dndFormId", dndFormId);
     } catch (err) {
       throw new Error(err);
     }

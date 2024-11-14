@@ -20,7 +20,7 @@ export default function CollectionsHero() {
         })}
       </div>
       <div className="flex m-auto w-screen translate-y-[-5vh]">
-        <div className="hero-content text-center min-w-[100%]">
+        <div className="hero-content text-center min-w-[100%] mb-[2rem]">
           <div className="max-w-md">
             <OverlayText textSize={5} textColor="primary">
               Customizations

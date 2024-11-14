@@ -39,7 +39,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
     name: product.name,
     description: product.description,
     collection: product.collection,
-    images: { ...product.images[0] },
+    images: { ...product.images?.[0] },
     price: product.price,
   });
   const [activeImage, setActiveImage] = useState(product.images?.[0].url);

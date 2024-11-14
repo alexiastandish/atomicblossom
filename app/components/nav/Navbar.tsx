@@ -20,7 +20,7 @@ export default function Navbar({ currentUser }) {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative flex-grow">
       <div
         className={`fixed h-[80px] w-screen top-0 left-0 right-0 z-1`}
         style={{
@@ -30,7 +30,7 @@ export default function Navbar({ currentUser }) {
           zIndex: 1,
         }}
       />{" "}
-      <nav className={`top-0 z-50 navbar w-[100%] fixed z-2`}>
+      <nav className={`top-0 z-50 navbar w-[100%] fixed`}>
         <div className="flex-1">
           <Link href="/" className="w-[110px] h-[50px] relative">
             <Image

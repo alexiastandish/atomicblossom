@@ -45,7 +45,7 @@ const ProductImage: React.FC<ProductImageProps> = ({
       sm:min-h-[400px]
       "
       >
-        {product.images.map((image: SelectedImgType) => {
+        {product?.image?.map((image: SelectedImgType) => {
           return (
             <div
               key={image.url}

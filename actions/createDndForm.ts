@@ -1,10 +1,9 @@
 "use server";
 
 import getCurrentUser from "./getCurrentUser";
-import { UserNotFoundError } from "./getDndForm";
+import { UserNotFoundError } from "./getDndForms";
 
 export async function createDndForm(data: { name: string }) {
-  console.log("data.name", data.name);
   const user = await getCurrentUser();
 
   if (!user) {

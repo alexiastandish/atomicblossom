@@ -89,9 +89,9 @@ const config: Config = {
     themes: [
       {
         mytheme: {
-          secondary: "#FB9A94",
           accent: "#00A0A2",
           neutral: "#FCCDC0",
+          peach: "#FB9A94",
           "base-100": "#ff00ff",
           info: "#0000ff",
           success: "#00BDBB",
@@ -100,7 +100,9 @@ const config: Config = {
           white: "#ffffff",
           "bg-primary": "#000000",
           "text-primary": "#00BDBB",
+          "text-secondary": "#FB9A94",
           primary: "#00BDBB",
+          secondary: "#FB9A94",
         },
       },
     ],

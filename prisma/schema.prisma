@@ -77,13 +77,23 @@ model Order {
 }
 
 model DndForm {
+    id                String              @id @default(auto()) @map("_id") @db.ObjectId
+    userId            String              @db.ObjectId
+    createDate        DateTime            @default(now())
+    submitted         Boolean             @default(false)
+    name              String
+    content           String              @default("[]")
+    shareURL          String              @default(uuid())
+    DndFormSubmission DndFormSubmission[]
+}
+
+model DndFormSubmission {
     id         String   @id @default(auto()) @map("_id") @db.ObjectId
     userId     String   @db.ObjectId
+    formId     String   @db.ObjectId
     createDate DateTime @default(now())
-    submitted  Boolean  @default(false)
-    name       String
-    content    String   @default("[]")
-    shareURL   String   @default(uuid())
+    form       DndForm  @relation(fields: [formId], references: [id])
+    content    String
 }
 
 type CartProductType {

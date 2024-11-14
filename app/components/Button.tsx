@@ -1,5 +1,6 @@
 "use client";
 
+import { LegacyRef, Ref, RefObject } from "react";
 import { IconType } from "react-icons";
 
 interface ButtonProps {
@@ -14,6 +15,7 @@ interface ButtonProps {
   textColor?: string;
   custom?: string;
   icon?: IconType;
+  ref?: LegacyRef<HTMLButtonElement>;
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
@@ -30,6 +32,7 @@ const Button: React.FC<ButtonProps> = ({
   icon: Icon,
   textColor = "white",
   onClick,
+  ref,
 }) => {
   return (
     <button
@@ -43,6 +46,7 @@ const Button: React.FC<ButtonProps> = ({
         ${disabled && "btn-disabled"}
         ${disabled && "btn-disabled"}
         `}
+      {...(ref ? { ref } : {})}
     >
       {loading && <span className="loading loading-spinner"></span>}
       {Icon && <Icon size={24} />}

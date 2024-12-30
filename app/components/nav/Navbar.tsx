@@ -6,9 +6,12 @@ import Link from "next/link";
 import CartCount from "./CartCount";
 import Image from "next/image";
 import UserMenu from "./UserMenu";
+import { usePathname } from "next/navigation";
 
 export default function Navbar({ currentUser }) {
+  const pathname = usePathname();
   const [navGradient, setNavGradient] = useState(false);
+
   const listenScrollEvent = () => {
     window.scrollY > 10 ? setNavGradient(true) : setNavGradient(false);
   };
@@ -18,19 +21,24 @@ export default function Navbar({ currentUser }) {
       window.removeEventListener("scroll", listenScrollEvent);
     };
   }, []);
+  console.log("navGradient", navGradient);
+
+  const showNavBar = pathname?.includes("builder");
 
   return (
     <div className="relative flex-grow">
       <div
-        className={`fixed h-[80px] w-screen top-0 left-0 right-0 z-1`}
+        className={`fixed h-[80px] w-screen top-0 left-0 right-0 z-1 ${
+          (navGradient || showNavBar) && "shadow-md"
+        }`}
         style={{
-          background: "linear-gradient(to bottom, white 20%, transparent 100%)",
-          opacity: navGradient ? 1 : 0,
+          background: "white",
+          opacity: navGradient || showNavBar ? 1 : 0,
           transition: "all .3s ease",
           zIndex: 1,
         }}
       />{" "}
-      <nav className={`top-0 z-50 navbar w-[100%] fixed`}>
+      <nav className={`top-0 z-30 navbar w-[100%] fixed`}>
         <div className="flex-1">
           <Link href="/" className="w-[110px] h-[50px] relative">
             <Image

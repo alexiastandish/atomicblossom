@@ -1,7 +1,7 @@
 import React from "react";
 import ProductCard from "./products/ProductCard";
 import OverlayText from "./OverlayText";
-import { collections } from "../../utils/products-old";
+import { collections } from "../utils/helpers/products-old";
 import CustomizationBtns from "./CustomizationBtns";
 
 export default function CollectionsHero() {

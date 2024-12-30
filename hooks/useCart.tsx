@@ -1,5 +1,5 @@
 import { CartProductType } from "@/app/product/[productId]/ProductDetails";
-import { SafeUser } from "@/types";
+import { SafeUser } from "@/types/SafeUser";
 import {
   createContext,
   useCallback,

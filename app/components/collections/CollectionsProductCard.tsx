@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import React, { use, useEffect, useState } from "react";
 import { ref, listAll, getDownloadURL } from "firebase/storage";
 import { storage } from "../../firebaseConfig";
-import { placeholderImg } from "@/utils/constants/placeholder-image";
+import { placeholderImg } from "@/app/utils/constants/placeholder-image";
 
 export default function CollectionsProductCard({ product }) {
   console.log("product", product);

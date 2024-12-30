@@ -6,7 +6,7 @@ import Heading from "../components/Heading";
 import Button from "../components/Button";
 import { MdArrowBack } from "react-icons/md";
 import ItemContent from "./ItemContent";
-import { formatPrice } from "@/utils/format-price";
+import { formatPrice } from "@/app/utils/helpers/formatPrice";
 import { useRouter } from "next/navigation";
 
 const CartClient = () => {

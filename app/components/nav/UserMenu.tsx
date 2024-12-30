@@ -7,7 +7,7 @@ import Link from "next/link";
 import { MenuItem } from "@mui/material";
 import { signOut } from "next-auth/react";
 import BackDrop from "./Backdrop";
-import { SafeUser } from "@/types";
+import { SafeUser } from "@/types/SafeUser";
 
 type UserMenuProps = {
   currentUser: SafeUser;

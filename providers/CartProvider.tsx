@@ -1,7 +1,7 @@
 "use client";
 
 import { CartContextProvider } from "@/hooks/useCart";
-import { SafeUser } from "@/types";
+import { SafeUser } from "@/types/SafeUser";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 

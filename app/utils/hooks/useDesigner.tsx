@@ -1,4 +1,4 @@
-import { DesignerContext } from "@/app/components/context/DesignerContext";
+import { DesignerContext } from "@/app/context/DesignerContext";
 import React, { useContext } from "react";
 
 function useDesigner() {

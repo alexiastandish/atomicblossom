@@ -13,7 +13,7 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Button from "@/app/components/Button";
 import Input from "@/app/components/inputs/Input";
-import { SafeUser } from "@/types";
+import { SafeUser } from "@/types/SafeUser";
 // import { SafeUser } from "@/types";
 
 interface RegisterFormProps {

@@ -1,12 +1,11 @@
 "use client";
 
-import { formatPrice } from "@/utils/format-price";
 import { CartProductType } from "../product/[productId]/ProductDetails";
 import Link from "next/link";
-import { truncateString } from "@/utils/truncate-string";
 import Image from "next/image";
-// import SetQuatity from '../components/products/SetQuantity'
 import { useCart } from "@/hooks/useCart";
+import { formatPrice } from "../utils/helpers/formatPrice";
+import { truncateString } from "../utils/helpers/truncateString";
 
 interface ItemContentProps {
   item: CartProductType;

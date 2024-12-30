@@ -36,7 +36,7 @@ export default function Designer(props) {
     },
   });
   return (
-    <div className="flex w-full h-full">
+    <div className="flex w-full h-full" style={{ border: "1px solid blue" }}>
       <div className="p-4 w-full">
         <div
           ref={droppable.setNodeRef}

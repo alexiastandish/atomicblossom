@@ -61,21 +61,8 @@ const ItemContent: React.FC<ItemContentProps> = ({ item }) => {
           </div>
         </div>
       </div>
-      <div className="justify-self-center">{formatPrice(item.price)}</div>
-      <div className="justify-self-center">
-        {/* <SetQuatity
-                    cartCounter={true}
-                    cartProduct={item}
-                    handleQtyIncrease={() => {
-                        handleCartQtyIncrease(item)
-                    }}
-                    handleQtyDecrease={() => {
-                        handleCartQtyDecrease(item)
-                    }}
-                /> */}
-      </div>
       <div className="justify-self-end font-semibold">
-        {formatPrice(item.price * item.quantity)}
+        {formatPrice(item.price)}
       </div>
     </div>
   );

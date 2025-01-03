@@ -21,7 +21,6 @@ export default function Navbar({ currentUser }) {
       window.removeEventListener("scroll", listenScrollEvent);
     };
   }, []);
-  console.log("navGradient", navGradient);
 
   const showNavBar = pathname?.includes("builder");
 

@@ -27,7 +27,7 @@ const Button: React.FC<ButtonProps> = ({
   accent,
   outline,
   loading,
-  small,
+  small = false,
   custom,
   icon: Icon,
   textColor = "white",
@@ -38,13 +38,14 @@ const Button: React.FC<ButtonProps> = ({
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`btn text-${textColor}
+      className={`btn text-${textColor} 
         ${primary && "btn-primary"}  
         ${secondary && "btn-secondary"}
         ${accent && "btn-accent"}
         ${outline && "btn-outline"}
         ${disabled && "btn-disabled"}
         ${disabled && "btn-disabled"}
+        ${small && "btn-sm"}
         `}
       {...(ref ? { ref } : {})}
     >

@@ -7,7 +7,6 @@ import { storage } from "../../firebaseConfig";
 import { placeholderImg } from "@/app/utils/constants/placeholder-image";
 
 export default function CollectionsProductCard({ product }) {
-  console.log("product", product);
   const router = useRouter();
   const [image, setImage] = useState(null);
   console.log(
@@ -19,10 +18,8 @@ export default function CollectionsProductCard({ product }) {
   useEffect(() => {
     listAll(imagesRef)
       .then((res) => {
-        console.log("res", res);
         let promises = res.items.map((imageRef) => getDownloadURL(imageRef));
         Promise.all(promises).then((urls) => {
-          console.log("urls", urls);
           setImage(urls[0]);
         });
       })
@@ -30,7 +27,7 @@ export default function CollectionsProductCard({ product }) {
         console.log(err);
       });
   }, []);
-  console.log("image", image);
+
   return (
     <li
       key={product.id}

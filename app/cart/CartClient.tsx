@@ -12,7 +12,6 @@ import { useRouter } from "next/navigation";
 const CartClient = () => {
   const { cartProducts, handleClearCart, cartTotalAmount, currentUser } =
     useCart();
-
   const router = useRouter();
 
   if (!cartProducts || cartProducts.length === 0) {
@@ -35,12 +34,7 @@ const CartClient = () => {
     <div className="">
       <Heading title="Shopping Cart" />
       <div className="grid grid-col-5 text-xs gap-4 pb-2">
-        <div className="col-span-2 justify-self-start">
-          <div className="justify-self-start">Product</div>
-          <div className="justify-self-center">Price</div>
-          <div className="justify-self-center">Quantity</div>
-          <div className="justify-self-end">Total</div>
-        </div>
+        <div className="col-span-2 justify-self-start"></div>
         <div className="">
           {cartProducts &&
             cartProducts.map((item) => {
@@ -84,7 +78,7 @@ const CartClient = () => {
               outline
             />
           </div>
-          <div className="text-sm flex flex-col gap-1 items-start">
+          {/* <div className="text-sm flex flex-col gap-1 items-start">
             <div className="flex justify-between w-full text-base font-semibold">
               <span>Subtotal</span>
               <span>{formatPrice(cartTotalAmount)}</span>
@@ -109,7 +103,7 @@ const CartClient = () => {
               <MdArrowBack />
               <span>Continue Shopping</span>
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

@@ -10,11 +10,11 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
 
 const calculateOrderAmount = (items: CartProductType[]) => {
   const totalPrice = items.reduce((acc, curr, i) => {
-    const itemTotal = curr.price * curr.quantity;
+    const itemTotal = curr.price;
     return acc + itemTotal;
   }, 0);
-
-  return totalPrice.toFixed(2);
+  console.log("totalPrice", totalPrice);
+  return totalPrice;
 };
 
 export async function POST(request: Request) {
@@ -25,9 +25,17 @@ export async function POST(request: Request) {
 
   const body = await request.json();
   const { items, payment_intent_id } = body;
+  const total = Math.round(calculateOrderAmount(items) * 100);
+  console.log("ALKSDJFLK", total);
 
-  const total = calculateOrderAmount(items) * 100;
-
+  const products = items.map((item) => ({
+    price: item.price,
+    name: item.name,
+    description: item?.description ?? "",
+    collection: item.collection,
+    quantity: 1,
+    id: item.id,
+  }));
   const orderData = {
     user: { connect: { id: currentUser.id } },
     amount: total,
@@ -35,9 +43,10 @@ export async function POST(request: Request) {
     status: "pending",
     deliveryStatus: "pending",
     paymentIntentId: payment_intent_id,
-    products: items,
+    products,
   };
 
+  console.log("orderData", orderData);
   if (payment_intent_id) {
     const current_intent = await stripe.paymentIntents.retrieve(
       payment_intent_id
@@ -58,7 +67,7 @@ export async function POST(request: Request) {
           where: { paymentIntentId: payment_intent_id },
           data: {
             amount: total,
-            products: items,
+            products: products,
           },
         }),
       ]);

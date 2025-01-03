@@ -51,7 +51,6 @@ const CheckoutClient = () => {
           setError(true);
           console.log("Error", error);
           toast.error("Something went wrong");
-          o;
         });
     }
   }, [cartProducts, paymentIntent]);

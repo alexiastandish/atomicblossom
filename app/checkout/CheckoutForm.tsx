@@ -1,7 +1,6 @@
 "use client";
 
 import { useCart } from "@/hooks/useCart";
-import { formatPrice } from "@/utils/format-price";
 import {
   useStripe,
   useElements,
@@ -12,6 +11,7 @@ import { useState, useEffect } from "react";
 import { toast } from "react-hot-toast";
 import Heading from "../components/Heading";
 import Button from "../components/Button";
+import { formatPrice } from "../utils/helpers/formatPrice";
 
 interface CheckoutFormProps {
   clientSecret: string;

@@ -16,12 +16,12 @@ const OverlayText: React.FC<OverlayTextProps> = ({
   textSize = 3,
   textColor,
   textWeight = "medium",
-  textAlign = "center",
+  textAlign,
   style,
 }) => {
   return (
     <h2
-      className={`text-shadow-pink font-display font-${textWeight} text-${textAlign} text-${textColor} text-${textSize}xl`}
+      className={`text-shadow-pink font-display leading-tight	 font-${textWeight} text-${textAlign} text-${textColor} text-${textSize}xl`}
       style={style}
     >
       {children}

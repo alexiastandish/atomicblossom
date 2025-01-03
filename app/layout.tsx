@@ -8,10 +8,6 @@ import CartProvider from "@/providers/CartProvider";
 import { Toaster } from "react-hot-toast";
 import getCurrentUser from "@/actions/getCurrentUser";
 import React from "react";
-// import DesignerContextProvider, {
-//   DesignerContext,
-// } from "./components/context/DesignerContext";
-// const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
   title: "Atomic Blossom",
@@ -37,7 +33,6 @@ export default async function RootLayout({
         <link rel="stylesheet" href="https://use.typekit.net/ydd2wia.css" />
       </head>
       <body className={`overscroll-none`}>
-        {/* <DesignerContextProvider> */}
         <Toaster
           toastOptions={{
             style: {
@@ -47,14 +42,12 @@ export default async function RootLayout({
           }}
         />
         <CartProvider currentUser={currentUser}>
-          {/* <div className="flex flex-col min-h-screen"> */}
           <div className="flex flex-col  min-h-screen">
             <Navbar currentUser={currentUser} />
-            <main className="flex-grow">{children}</main>
+            <main className="flex-grow flex-1">{children}</main>
             <Footer />
           </div>
         </CartProvider>
-        {/* </DesignerContextProvider> */}
       </body>
     </html>
   );

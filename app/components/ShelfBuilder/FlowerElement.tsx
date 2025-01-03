@@ -10,6 +10,7 @@ import {
 import flowers from "@/app/utils/constants/flowers.json";
 import useShelfBuilder from "@/hooks/useShelfBuilder";
 import { IconPencil } from "@tabler/icons-react";
+import Image from "next/image";
 
 export const HydrangeaFormElement: FormFlower = {
   type: "Hydrangea",
@@ -76,6 +77,10 @@ function BuilderComponent({
 }) {
   const flowerConfig = flowers[flowerInstance.type.toLowerCase()];
   const { setEditFlowerAndIndex } = useShelfBuilder();
+  console.log(
+    "flowerConfig.image.src[flowerInstance.properties.color]",
+    flowerConfig.image.src[flowerInstance.properties.color]
+  );
   return (
     <HoverWrapper
       isDragging={isDragging}
@@ -89,9 +94,11 @@ function BuilderComponent({
           width: flowerInstance.properties?.size,
         }}
       >
-        <img
+        <Image
           src={flowerConfig.image.src[flowerInstance.properties.color]}
           alt={flowerInstance.type}
+          layout="fill"
+          objectFit="contain"
           className="w-[100%] h-[100%] object-cover"
         />
       </div>

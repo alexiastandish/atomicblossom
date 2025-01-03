@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useEffect, useState } from "react";
 import {
   FlowerElements,
   FlowerType,
@@ -10,6 +10,9 @@ import {
 import defaultData from "@/app/utils/constants/flowers.json";
 import { Active } from "@dnd-kit/core";
 import { idGenerator } from "../utils/helpers/idGenerator";
+import { useParams, usePathname, useSearchParams } from "next/navigation";
+import { getFormById } from "@/actions/getFormById";
+import axios from "axios";
 
 type ShelfBuilderContextType = {
   flowers: FormFlowerInstance[];
@@ -36,6 +39,33 @@ export default function ShelfBuilderContextProvider({
   const [flowers, setFlowers] = useState<FormFlowerInstance[]>([]);
   const [editFlower, setEditFlower] = useState<FormFlowerInstance | null>(null);
   const [editIndex, setEditIndex] = useState<number | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const pathname = usePathname();
+  const paramsId = useParams()?.id as string;
+
+  console.log("params", paramsId);
+  console.log("pathname", pathname);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsLoading(true);
+      setError(null);
+
+      try {
+        const response = await axios.get(`/api/get-form-by-id/${paramsId}`);
+        const parsedContent = JSON.parse(response.data.content);
+
+        setFlowers(parsedContent);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [paramsId]);
 
   const setEditFlowerAndIndex = (value: FormFlowerInstance, index: number) => {
     setEditFlower(value);

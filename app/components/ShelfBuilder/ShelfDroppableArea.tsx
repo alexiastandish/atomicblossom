@@ -5,7 +5,7 @@ import { useDndMonitor, useDroppable } from "@dnd-kit/core";
 const CustomStyle = {
   display: "flex",
   height: "400px",
-  width: "900px",
+  width: "924px",
   position: "relative",
   overflow: "hidden",
 };
@@ -22,15 +22,10 @@ export function ShelfDroppableArea({ children, setPosition }) {
       if (over) {
         const droppableRect = over.rect;
         const draggableRect = active.rect;
-        console.log("droppableRect", droppableRect);
-        console.log("draggableRect", draggableRect);
 
         const x = draggableRect.current.translated.left - droppableRect.left;
         const y = draggableRect.current.translated?.top - droppableRect.top;
-        console.log("x", x);
-        console.log("y", y);
         setPosition({ x, y });
-        // setDroppedText(`Dropped at x: ${x}, y: ${y}`);
       }
     },
   });

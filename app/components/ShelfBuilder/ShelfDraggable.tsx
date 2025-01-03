@@ -6,7 +6,6 @@ import { FlowerElements, FormFlowerInstance } from "./ShelfBuilderElements";
 // todo: update to dynamic
 const CustomStyle = {
   display: "flex",
-  border: "1px solid black",
 };
 
 export function ShelfDraggable({

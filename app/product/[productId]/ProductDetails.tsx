@@ -31,7 +31,6 @@ const Horizontal = () => {
 };
 
 const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
-  console.log("product", product);
   const { handleAddProductToCart, cartProducts } = useCart();
   const [isProductInCart, setIsProductInCart] = useState(false);
   const [activeProduct, setCartProduct] = useState<CartProductType>({

@@ -12,9 +12,8 @@ export default async function Product({ params }: { params: IParams }) {
   //   (product) => product.id === params.productId
   // )?.[0];
   const currentProduct = await getCurrentProduct(params.productId);
-  console.log("currentProduct", currentProduct);
   return (
-    <div className="p-8 hero h-screen">
+    <div className="p-8 hero">
       {/* <Container> */}
       <ProductDetails product={currentProduct} />
       <div className="flex flex-col mt-20 gap-4">

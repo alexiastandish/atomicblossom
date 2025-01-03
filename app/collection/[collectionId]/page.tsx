@@ -12,10 +12,8 @@ type IParams = {
 };
 
 export default async function page({ params }: { params: IParams }) {
-  console.log("params", params);
   const collection = await getCollectionProducts(params.collectionId);
 
-  console.log("PRODUCTS", collection);
   const currentCollection = collections.filter(
     (collection) => collection.id === params.collectionId
   )?.[0];

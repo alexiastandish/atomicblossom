@@ -52,6 +52,10 @@ const config: Config = {
       //     },
       //   },
       // },
+      aspectRatio: {
+        "1000/482": "1000 / 482",
+        "900/482": "900 / 482",
+      },
       background: {
         "white-gradient-overlay": `linear-gradient(white 20%, transparent 100%); opacity: 1; transition: 0.3s; z-index: 1`,
       },
@@ -109,6 +113,7 @@ const config: Config = {
     base: false,
   },
   plugins: [
+    require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/typography"),
     require("daisyui"),
     plugin(function ({ matchUtilities, theme }) {

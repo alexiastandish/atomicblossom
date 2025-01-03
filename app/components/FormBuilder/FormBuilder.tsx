@@ -13,7 +13,7 @@ export default function FormBuilder({ form }: { form: DndForm | null }) {
   return (
     <DndContext>
       <main className="flex flex-col w-full mt-[80px]">
-        <nav className="flex justify-between border-b-2 p-4 gap-3 items-center">
+        <nav className="flex justify-between border-b-2 p-1 gap-3 items-center">
           <h2 className="truncate font-medium">
             <span className="text-muted-foreground mr-2">Form: </span>
             {form?.name}

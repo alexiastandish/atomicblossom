@@ -9,7 +9,6 @@ export async function getSession() {
 export default async function getCollectionProducts(collection: string) {
   try {
     const session = await getSession();
-    console.log("collection", collection);
 
     if (!session?.user?.email) {
       return null;

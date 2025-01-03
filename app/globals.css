@@ -6,6 +6,7 @@
 @layer components {
     body {
         @apply font-sans;
+        min-height: 100vh;
       }
 
     .card {

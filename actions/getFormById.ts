@@ -3,7 +3,6 @@ import getCurrentUser from "./getCurrentUser";
 export class UserNotFoundError extends Error {}
 
 export async function getFormById(id: string) {
-  console.log("id", id);
   const user = await getCurrentUser();
 
   if (!user) {

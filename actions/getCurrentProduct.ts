@@ -19,7 +19,6 @@ export default async function getCurrentProduct(id) {
         id,
       },
     });
-    console.log("currentProduct", currentProduct);
     if (!currentProduct) {
       return null;
     }

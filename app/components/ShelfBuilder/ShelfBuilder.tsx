@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   DndContext,
   DragEndEvent,
@@ -49,7 +49,7 @@ export default function ShelfBuilder({
   const sensors = useSensors(smartSensor);
   return (
     <div className="flex items-center justify-items-center justify-center min-h-screen w-full h-full gap-16 font-[family-name:var(--font-geist-sans)] relative paper  flex-grow overflow-y-auto bg-accent bg-[url(/paper.svg)] dark:bg-[url(/paper-dark.svg)]">
-      <div className="flex flex-col justify-center align-center bg-white rounded-md overflow-hidden  w-[1000px] h-[482px]">
+      <div className="flex flex-col justify-center align-center bg-white rounded-md overflow-hidden ">
         <FormHeader form={formFlowers} />
         <main className="flex">
           <DndContext
@@ -60,20 +60,22 @@ export default function ShelfBuilder({
             sensors={sensors}
           >
             <Sidebar />
-            <ShelfDroppableArea setPosition={setPosition}>
-              {flowers.map((flower, index) => (
-                <ShelfDraggable
-                  styles={{
-                    position: "absolute",
-                    left: `${flower.position.x}px`,
-                    top: `${flower.position.y}px`,
-                  }}
-                  index={index}
-                  flower={flower}
-                  key={flower.id}
-                />
-              ))}
-            </ShelfDroppableArea>
+            <div>
+              <ShelfDroppableArea setPosition={setPosition}>
+                {flowers.map((flower, index) => (
+                  <ShelfDraggable
+                    styles={{
+                      position: "absolute",
+                      left: `${flower.position.x}px`,
+                      top: `${flower.position.y}px`,
+                    }}
+                    index={index}
+                    flower={flower}
+                    key={flower.id}
+                  />
+                ))}
+              </ShelfDroppableArea>
+            </div>
 
             <SideRail>
               <FormFlowerConfig />

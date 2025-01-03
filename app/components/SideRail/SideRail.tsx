@@ -12,7 +12,7 @@ export default function SideRail({ children }: { children: ReactNode }) {
       <AnimatePresence>
         {editFlower && (
           <motion.aside
-            className={`${styles.sideRail} bg-primary shadow-lg`}
+            className={`${styles.sideRail} bg-neutral shadow-lg`}
             initial={{ right: "-300px" }}
             animate={{
               right: 0,

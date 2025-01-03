@@ -16,7 +16,7 @@ export default function CreateCustomBtn(props) {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
 
-  const [submit] = useDndForm({ name });
+  const { submit } = useDndForm({ name });
 
   const handleClickOpen = () => {
     setOpen(true);

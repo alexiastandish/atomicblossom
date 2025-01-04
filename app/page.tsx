@@ -4,7 +4,7 @@ export const dynamic = "force-dynamic";
 
 // import CollectionsHero from "./components/CollectionsHero";
 
-export default function Home() {
+export default function Page() {
   return (
     <div className="m-0 overflow-x-hidden">
       <HomeBanner />

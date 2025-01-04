@@ -8,8 +8,8 @@ import {
   FormElementInstance,
   FormElements,
 } from "../FormElements/FormElements";
-import useDesigner from "@/app/utils/hooks/useDesigner";
-import { idGenerator } from "@/app/utils/helpers/idGenerator";
+import useDesigner from "@/utils/hooks/useDesigner";
+import { idGenerator } from "@/utils/helpers/idGenerator";
 
 export default function Designer(props) {
   // const [elements, setElements] = useState<FormElementInstance[]>([]);

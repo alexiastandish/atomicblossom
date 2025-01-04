@@ -1,13 +1,13 @@
 "use client";
 
-import HoverWrapper from "@/app/components/HoverWrapper/HoverWrapper";
+import HoverWrapper from "@/components/HoverWrapper/HoverWrapper";
 import {
   FlowerType,
   FormFlower,
   FormFlowerInstance,
   Properties,
-} from "@/app/components/ShelfBuilderElements";
-import flowers from "@/app/utils/constants/flowers.json";
+} from "@/components/ShelfBuilderElements";
+import flowers from "@/utils/constants/flowers.json";
 import useShelfBuilder from "@/hooks/useShelfBuilder";
 import { IconPencil } from "@tabler/icons-react";
 import Image from "next/image";

@@ -1,5 +1,5 @@
-import CollectionsHero from "./components/CollectionsHero";
-import HomeBanner from "./components/HomeBanner";
+import CollectionsHero from "@/components/CollectionsHero";
+import HomeBanner from "@/components/HomeBanner";
 export const dynamic = "force-dynamic";
 
 // import CollectionsHero from "./components/CollectionsHero";

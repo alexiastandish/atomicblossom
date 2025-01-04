@@ -1,7 +1,7 @@
 "use client";
 
-import Button from "@/app/components/Button";
-import ProductImage from "@/app/components/products/ProductImage";
+import Button from "@/components/Button";
+import ProductImage from "@/components/products/ProductImage";
 import { useCart } from "@/hooks/useCart";
 import { Rating } from "@mui/material";
 import React, { useEffect, useState } from "react";

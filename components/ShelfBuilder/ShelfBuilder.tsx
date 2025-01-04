@@ -12,7 +12,7 @@ import {
 } from "@dnd-kit/core";
 import Sidebar from "./Sidebar/Sidebar";
 import { restrictToWindowEdges, snapCenterToCursor } from "@dnd-kit/modifiers";
-import SideRail from "@/app/components/SideRail/SideRail";
+import SideRail from "@/components/SideRail/SideRail";
 import useShelfBuilder from "@/hooks/useShelfBuilder";
 import { SmartPointerSensor } from "../SmartPointerSensor";
 import FormFlowerConfig from "./FormFlowerConfig/FormFlowerConfig";
@@ -20,7 +20,7 @@ import { FlowerElementInstance } from "../FormElements/FormElements";
 import { ShelfDroppableArea } from "./ShelfDroppableArea";
 import { ShelfDraggable } from "./ShelfDraggable";
 import FormHeader from "../FormHeader/FormHeader";
-import defaultFlowers from "@/app/utils/constants/flowers.json";
+import defaultFlowers from "@/utils/constants/flowers.json";
 
 export default function ShelfBuilder({
   formFlowers,

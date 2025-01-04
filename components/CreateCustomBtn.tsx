@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import Button from "./Button";
-import useDndForm from "../../hooks/use-dnd-form";
+import useDndForm from "../hooks/use-dnd-form";
 
 export default function CreateCustomBtn(props) {
   const [open, setOpen] = useState(false);
@@ -27,19 +27,12 @@ export default function CreateCustomBtn(props) {
 
   return (
     <div>
-      <Button accent onClick={handleClickOpen} label="Build New Creation" />
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        // PaperProps={{
-        //   component: "form",
-        //   onSubmit: (event: React.FormEvent<HTMLFormElement>) => {
-        //     event.preventDefault();
-
-        //     handleClose();
-        //   },
-        // }}
-      >
+      <Button
+        accent
+        onClick={handleClickOpen}
+        label="Create a New Shelf Design"
+      />
+      <Dialog open={open} onClose={handleClose}>
         <DialogContent>
           <h1 className="font-display p-5 text-primary text-2xl">
             Name Your Creation
@@ -60,18 +53,6 @@ export default function CreateCustomBtn(props) {
               Name
             </label>
           </div>
-          {/* <TextField
-            autoFocus
-            required
-            margin="dense"
-            id="name"
-            name="name"
-            label="Name"
-            type="text"
-            fullWidth
-            variant="standard"
-         
-          /> */}
         </DialogContent>
         <DialogActions>
           <Button outline accent label="Cancel" onClick={handleClose}></Button>

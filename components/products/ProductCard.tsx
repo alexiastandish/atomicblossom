@@ -7,7 +7,7 @@ import { Rating } from "@mui/material";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ref, listAll, getDownloadURL } from "firebase/storage";
-import { storage } from "../../firebaseConfig";
+import { storage } from "@/app/firebaseConfig";
 import OverlayText from "../OverlayText";
 
 interface ProductCardProps {

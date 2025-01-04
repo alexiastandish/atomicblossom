@@ -1,11 +1,11 @@
-import Container from "@/app/components/Container";
+import Container from "@/components/Container";
 import ProductDetails from "./ProductDetails";
 import ListRating from "./ListRating";
-import { collections } from "@/app/utils/constants/collections";
-import OverlayText from "@/app/components/OverlayText";
+import { collections } from "@/utils/constants/collections";
+import OverlayText from "@/components/OverlayText";
 import getCollectionProducts from "@/actions/getCollectionProducts";
 import { Product } from "@prisma/client";
-import CollectionsProductCard from "@/app/components/collections/CollectionsProductCard";
+import CollectionsProductCard from "@/components/collections/CollectionsProductCard";
 
 type IParams = {
   collectionId: string;

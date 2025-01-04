@@ -1,5 +1,5 @@
 import React from "react";
-import flowers from "@/app/utils/constants/flowers.json";
+import flowers from "@/utils/constants/flowers.json";
 import useShelfBuilder from "@/hooks/useShelfBuilder";
 import FormFlowerColor from "./FormFlowerColor";
 import FormFlowerSize from "./FormFlowerSize";

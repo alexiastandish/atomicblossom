@@ -3,16 +3,13 @@
 import { useRouter } from "next/navigation";
 import React, { use, useEffect, useState } from "react";
 import { ref, listAll, getDownloadURL } from "firebase/storage";
-import { storage } from "../../firebaseConfig";
-import { placeholderImg } from "@/app/utils/constants/placeholder-image";
+import { storage } from "@/app/firebaseConfig";
+import { placeholderImg } from "@/utils/constants/placeholder-image";
 
 export default function CollectionsProductCard({ product }) {
   const router = useRouter();
   const [image, setImage] = useState(null);
-  console.log(
-    "`images/collections/${product.collection}/${product.id}`",
-    `images/collections/${product.collection}/${product.id}`
-  );
+
   const imagesRef = ref(storage, `images/products/${product.id}`);
 
   useEffect(() => {
@@ -38,7 +35,7 @@ export default function CollectionsProductCard({ product }) {
         <div className="aspect-h-1 aspect-w-1 h-[200px] w-full overflow-hidden rounded-md bg-gray-200">
           <img
             src={image ?? placeholderImg}
-            alt="Black machined steel pen with hexagonal grip and small white logo at top."
+            alt={image}
             className="h-full w-full object-cover object-center group-hover:opacity-75"
           />
         </div>

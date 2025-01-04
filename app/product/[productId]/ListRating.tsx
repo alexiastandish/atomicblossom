@@ -1,9 +1,9 @@
 "use client";
-import Heading from "@/app/components/Heading";
+import Heading from "@/components/Heading";
 import React from "react";
 import { DateTime } from "luxon";
 import { Rating } from "@mui/material";
-import Avatar from "@/app/components/Avatar";
+import Avatar from "@/components/Avatar";
 
 type ListingRatingProps = {
   product: any;

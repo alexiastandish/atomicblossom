@@ -96,6 +96,26 @@ model DndFormSubmission {
     content    String
 }
 
+model CustomRequestSubmission {
+    id         String              @id @default(auto()) @map("_id") @db.ObjectId
+    userId     String              @db.ObjectId
+    createDate DateTime            @default(now())
+    content    CustomRequestData
+    status     CustomRequestStatus @default(UNFULFILLED)
+    address    Address?
+}
+
+type CustomRequestData {
+    name        String
+    email       String
+    images      ImageUpload[]
+    type        CustomRequestItemType?
+    length      Int?
+    flowerColor String?
+    resinTint   ResinTint?
+    description String?
+}
+
 type CartProductType {
     id          String
     name        String
@@ -112,6 +132,16 @@ type Image {
     image     String
 }
 
+type ImageUpload {
+    data_url String
+    metadata ImageUploadMetadata
+}
+
+type ImageUploadMetadata {
+    id       String
+    filename String
+}
+
 type Address {
     city        String
     country     String
@@ -124,6 +154,25 @@ type Address {
 enum Role {
     USER
     ADMIN
+}
+
+enum CustomRequestItemType {
+    NECKLACE
+    BRACELET
+    EARRINGS
+    OTHER
+}
+
+enum ResinTint {
+    CLEAR
+    BLACK
+}
+
+enum CustomRequestStatus {
+    UNFULFILLED
+    IN_PROGRESS
+    SHIPPED
+    FULFILLED
 }
 
 // model Session {

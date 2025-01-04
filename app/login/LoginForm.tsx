@@ -2,10 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import Heading from "../components/Heading";
+import Heading from "@/components/Heading";
 import { AiOutlineGoogle } from "react-icons/ai";
-import Input from "../components/inputs/Input";
-import Button from "../components/Button";
+import Input from "@/components/inputs/Input";
+import Button from "@/components/Button";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";

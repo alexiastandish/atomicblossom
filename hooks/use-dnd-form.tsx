@@ -2,8 +2,8 @@ import { useRouter } from "next/navigation";
 import { createDndForm } from "../actions/createDndForm";
 import toast from "react-hot-toast";
 import { saveDndForm } from "@/actions/saveDndForm";
-import { FlowerElementInstance } from "@/app/components/FormElements/FormElements";
-import { FormFlowerInstance } from "@/app/components/ShelfBuilderElements";
+import { FlowerElementInstance } from "@/components/FormElements/FormElements";
+import { FormFlowerInstance } from "@/components/ShelfBuilderElements";
 
 const useDndForm = ({
   name,

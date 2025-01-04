@@ -1,6 +1,6 @@
 import { getFormById } from "@/actions/getFormById";
-import FormBuilder from "@/app/components/FormBuilder/FormBuilder";
-import ShelfBuilder from "@/app/components/ShelfBuilder/ShelfBuilder";
+import FormBuilder from "@/components/FormBuilder/FormBuilder";
+import ShelfBuilder from "@/components/ShelfBuilder/ShelfBuilder";
 import DesignerContextProvider, {
   DesignerContext,
 } from "@/app/context/DesignerContext";

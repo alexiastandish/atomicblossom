@@ -4,7 +4,7 @@ export class UserNotFoundError extends Error {}
 
 export async function getDndForms() {
   const user = await getCurrentUser();
-
+  console.log("user", user);
   if (!user) {
     throw new UserNotFoundError();
   }
@@ -15,6 +15,7 @@ export async function getDndForms() {
     },
   });
 
+  console.log("formsData", formsData);
   if (!formsData) {
     throw new Error("Something went wrong :/");
   }

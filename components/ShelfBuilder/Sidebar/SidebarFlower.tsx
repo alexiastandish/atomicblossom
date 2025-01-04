@@ -2,7 +2,7 @@
 import React from "react";
 import { useDraggable } from "@dnd-kit/core";
 import Image from "next/image";
-import { FormFlower } from "@/app/components/ShelfBuilderElements";
+import { FormFlower } from "@/components/ShelfBuilderElements";
 
 export default function SidebarFlower({
   formFlower,

@@ -1,6 +1,6 @@
 import React from "react";
-import Container from "../components/Container";
-import FormWrap from "../components/FormWrap";
+import Container from "@/components/Container";
+import FormWrap from "@/components/FormWrap";
 import CheckoutClient from "./CheckoutClient";
 export const dynamic = "force-dynamic";
 

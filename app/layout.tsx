@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import Footer from "./components/footer/Footer";
-import Navbar from "./components/nav/Navbar";
+import Footer from "@/components/footer/Footer";
+import Navbar from "@/components/nav/Navbar";
 import CartProvider from "@/providers/CartProvider";
 import { Toaster } from "react-hot-toast";
 import getCurrentUser from "@/actions/getCurrentUser";

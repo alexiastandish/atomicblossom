@@ -2,11 +2,11 @@
 
 import { useCart } from "@/hooks/useCart";
 import Link from "next/link";
-import Heading from "../components/Heading";
-import Button from "../components/Button";
+import Heading from "@/components/Heading";
+import Button from "@/components/Button";
 import { MdArrowBack } from "react-icons/md";
 import ItemContent from "./ItemContent";
-import { formatPrice } from "@/app/utils/helpers/formatPrice";
+import { formatPrice } from "@/utils/helpers/formatPrice";
 import { useRouter } from "next/navigation";
 
 const CartClient = () => {

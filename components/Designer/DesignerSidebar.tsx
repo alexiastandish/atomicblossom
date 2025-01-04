@@ -1,7 +1,7 @@
 import React from "react";
 import { FormElements } from "../FormElements/FormElements";
 import SidebarBtnElement from "./SidebarBtnElement";
-import flowers from "@/app/utils/constants/flowers-old.json";
+import flowers from "@/utils/constants/flowers-old.json";
 
 export default function DesignerSidebar(props) {
   return (

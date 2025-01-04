@@ -1,6 +1,7 @@
 import getCurrentUser from "@/actions/getCurrentUser";
 import Container from "../components/Container";
 import CartClient from "./CartClient";
+export const dynamic = "force-dynamic";
 
 export default function Cart(props) {
   const currentUser = getCurrentUser();

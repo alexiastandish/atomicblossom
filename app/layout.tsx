@@ -1,13 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
-// import { Poppins } from "next/font/google";
 import Footer from "./components/footer/Footer";
-// import { Toaster } from "react-hot-toast";
 import Navbar from "./components/nav/Navbar";
 import CartProvider from "@/providers/CartProvider";
 import { Toaster } from "react-hot-toast";
 import getCurrentUser from "@/actions/getCurrentUser";
-import React from "react";
 
 export const metadata: Metadata = {
   title: "Atomic Blossom",

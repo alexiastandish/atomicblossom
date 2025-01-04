@@ -4,11 +4,11 @@ import { getDndForms } from "@/actions/getDndForms";
 import OverlayText from "../components/OverlayText";
 import FormsList from "../components/FormsList/FormsList";
 import CustomRequestForm from "../components/CustomRequestForm/CustomRequestForm";
+export const dynamic = "force-dynamic";
 
 export default async function page(props) {
   const dndForms = await getDndForms();
 
-  console.log("dndForms", dndForms);
   // TODO add color of shelf
   return (
     <div className=" flex flex-col xl:bg-yellow-500 lg:bg-green-500 md:bg-blue-500 sm:bg-red-500">

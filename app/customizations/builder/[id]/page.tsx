@@ -6,6 +6,7 @@ import DesignerContextProvider, {
 } from "@/app/context/DesignerContext";
 import ShelfBuilderContextProvider from "@/app/context/ShelfBuilderContext";
 import React from "react";
+export const dynamic = "force-dynamic";
 
 export default async function page({ params }: { params: { id: string } }) {
   const form = await getFormById(params.id);

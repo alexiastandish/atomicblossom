@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { useEffect } from "react";
+export const dynamic = "force-dynamic";
 
 export default function ErrorPage({ error }: { error: Error }) {
   useEffect(() => console.error(error), [error]);

@@ -3,6 +3,7 @@ import { product } from "@/app/utils/helpers/product";
 import ProductDetails from "./ProductDetails";
 import ListRating from "./ListRating";
 import getCurrentProduct from "@/actions/getCurrentProduct";
+export const dynamic = "force-dynamic";
 
 type IParams = {
   productId?: string;

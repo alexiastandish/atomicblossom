@@ -9,9 +9,9 @@ import {
 } from "@/components/ShelfBuilder/ShelfBuilderElements";
 import defaultData from "@/utils/constants/flowers.json";
 import { Active } from "@dnd-kit/core";
-import { idGenerator } from "../utils/helpers/idGenerator";
 import { useParams, usePathname } from "next/navigation";
 import axios from "axios";
+import { idGenerator } from "@/utils/helpers/idGenerator";
 
 type ShelfBuilderContextType = {
   flowers: FormFlowerInstance[];

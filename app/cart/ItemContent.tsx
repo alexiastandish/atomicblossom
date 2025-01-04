@@ -4,8 +4,8 @@ import { CartProductType } from "../product/[productId]/ProductDetails";
 import Link from "next/link";
 import Image from "next/image";
 import { useCart } from "@/hooks/useCart";
-import { formatPrice } from "../utils/helpers/formatPrice";
-import { truncateString } from "../utils/helpers/truncateString";
+import { truncateString } from "@/utils/helpers/truncateString";
+import { formatPrice } from "@/utils/helpers/formatPrice";
 
 interface ItemContentProps {
   item: CartProductType;

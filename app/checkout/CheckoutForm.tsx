@@ -11,7 +11,7 @@ import { useState, useEffect } from "react";
 import { toast } from "react-hot-toast";
 import Heading from "@/components/Heading";
 import Button from "@/components/Button";
-import { formatPrice } from "../utils/helpers/formatPrice";
+import { formatPrice } from "@/utils/helpers/formatPrice";
 
 interface CheckoutFormProps {
   clientSecret: string;

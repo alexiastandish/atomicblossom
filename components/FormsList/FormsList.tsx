@@ -5,12 +5,11 @@ import React from "react";
 
 export default function FormsList({ forms }: { forms: DndForm[] }) {
   const router = useRouter();
+  console.log("forms", forms);
 
   return (
     <div>
       {forms.map((form) => {
-        console.log("form", form);
-
         return (
           <div
             className="p-5 m-5 bg-white rounded-lg flex items-center justify-between space-x-8  border-transparent border-2 hover:border-secondary  cursor-pointer"

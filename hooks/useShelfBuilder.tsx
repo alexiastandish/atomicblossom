@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useContext } from "react";
-import { ShelfBuilderContext } from "@/app/context/ShelfBuilderContext";
+import { ShelfBuilderContext } from "@/context/ShelfBuilderContext";
 
 function useShelfBuilder() {
   const context = useContext(ShelfBuilderContext);

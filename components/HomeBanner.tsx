@@ -5,7 +5,6 @@ import Container from "./Container";
 const HomeBanner = () => {
   return (
     <div className="bg-hero-pattern w-full h-[90vh] bg-cover bg-center hero min-h-[90vh] relative">
-      {/* <div className="hero bg-base-200 min-h-screen"> */}
       <div className="hero-content flex-col lg:flex-row">
         <Image
           src="/images/hero-logo-white.png"

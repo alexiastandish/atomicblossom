@@ -16,10 +16,10 @@ export default function ItemTypeSelector() {
   });
 
   return (
-    <div>
+    <div className="">
       <RadioGroup.Root
         value={field.value}
-        className={styles.RadioGroupRoot}
+        className={`${styles.RadioGroupRoot} grid grid-cols-4`}
         aria-label="View density"
         onValueChange={(option) => field.onChange(option)}
       >

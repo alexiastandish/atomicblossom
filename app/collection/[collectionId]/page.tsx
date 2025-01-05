@@ -1,11 +1,9 @@
 import Container from "@/components/Container";
-import ProductDetails from "./ProductDetails";
-import ListRating from "./ListRating";
 import { collections } from "@/utils/constants/collections";
 import OverlayText from "@/components/OverlayText";
 import getCollectionProducts from "@/actions/getCollectionProducts";
-import { Product } from "@prisma/client";
 import CollectionsProductCard from "@/components/collections/CollectionsProductCard";
+import styles from "../collection.module.scss";
 
 type IParams = {
   collectionId: string;
@@ -14,18 +12,18 @@ type IParams = {
 export default async function page({ params }: { params: IParams }) {
   const collection = await getCollectionProducts(params.collectionId);
 
-  const currentCollection = collections.filter(
-    (collection) => collection.id === params.collectionId
-  )?.[0];
-
   return (
     <div className="p-8">
       <Container>
         <div>
           <div className="py-16 sm:py-24 lg:mx-auto lg:max-w-7xl lg:px-8">
             <div className="flex items-center justify-between px-4 sm:px-6 lg:px-0">
-              <OverlayText textAlign="left" textColor="primary">
-                {currentCollection.name}
+              <OverlayText
+                textAlign="left"
+                textColor="primary"
+                className={styles.collectionHeader}
+              >
+                {params.collectionId}
               </OverlayText>
             </div>
 

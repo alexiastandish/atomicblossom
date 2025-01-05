@@ -3,7 +3,9 @@ import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./context/**/*.{js,ts,jsx,tsx,mdx}",
+    "./hooks/**/*.{js,ts,jsx,tsx,mdx}",
+    "./lib/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./utils/**/*.{js,ts,jsx,tsx,mdx}",
@@ -52,6 +54,9 @@ const config: Config = {
       //     },
       //   },
       // },
+      height: {
+        "128": "32rem",
+      },
       aspectRatio: {
         "1000/482": "1000 / 482",
         "900/482": "900 / 482",

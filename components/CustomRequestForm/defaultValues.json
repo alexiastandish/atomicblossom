@@ -6,5 +6,13 @@
   "length": 0,
   "flowerColor": "",
   "resinTint": null,
-  "description": ""
+  "description": "",
+  "address": {
+    "city": "",
+    "country": "",
+    "line1": "",
+    "line2": "",
+    "postal_code": "",
+    "state": ""
+  }
 }

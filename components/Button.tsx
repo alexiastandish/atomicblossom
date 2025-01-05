@@ -37,15 +37,16 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       onClick={onClick}
+      style={{ cursor: "pointer" }}
       disabled={disabled}
-      className={`btn text-${textColor} 
-        ${primary && "btn-primary"}  
-        ${secondary && "btn-secondary"}
-        ${accent && "btn-accent"}
-        ${outline && "btn-outline"}
-        ${disabled && "btn-disabled"}
-        ${disabled && "btn-disabled"}
-        ${small && "btn-sm"}
+      className={`btn  text-${textColor} 
+        ${primary ? "btn-primary" : ""}  
+        ${secondary ? "btn-secondary" : ""}
+        ${accent ? "btn-accent" : ""}
+        ${outline ? "btn-outline" : ""} 
+        ${disabled ? "btn-disabled" : ""}
+        ${disabled ? "btn-disabled" : ""}
+        ${small ? "btn-sm" : ""}
         `}
       {...(ref ? { ref } : {})}
     >

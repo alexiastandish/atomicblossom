@@ -14,6 +14,7 @@ interface ButtonProps {
   small?: boolean;
   textColor?: string;
   custom?: string;
+  className?: string;
   icon?: IconType;
   ref?: LegacyRef<HTMLButtonElement>;
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
@@ -31,6 +32,7 @@ const Button: React.FC<ButtonProps> = ({
   custom,
   icon: Icon,
   textColor = "white",
+  className,
   onClick,
   ref,
 }) => {
@@ -46,7 +48,8 @@ const Button: React.FC<ButtonProps> = ({
         ${outline ? "btn-outline" : ""} 
         ${disabled ? "btn-disabled" : ""}
         ${disabled ? "btn-disabled" : ""}
-        ${small ? "btn-sm" : ""}
+        ${small ? "btn-sm" : ""} 
+        ${className ? className : ""}
         `}
       {...(ref ? { ref } : {})}
     >

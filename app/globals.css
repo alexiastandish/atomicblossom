@@ -54,6 +54,15 @@
     cursor: pointer;
     @apply text-white font-bold;
   }
+
+  .h2 {
+    font-size: 3em;
+
+    @media (max-width: 640px) { 
+      font-size: 2em;
+     }
+  }
+
 }
 
 /* 

@@ -85,7 +85,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
 
   return (
     <>
-      <Heading title="Create An Account" />
+      <Heading title="Create an Account" />
       <Button
         outline
         label="Continue with Google"

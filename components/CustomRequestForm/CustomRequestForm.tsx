@@ -70,7 +70,8 @@ export default function CustomRequestForm({
 
   return (
     <section
-      className={`hero min-h-screen  bg-hero-pattern bg-white flex items-center justify-center relative`}
+      id="custom-request"
+      className={`hero min-h-screen  bg-hero-pattern bg-white flex items-center justify-center relative `}
     >
       <div
         className="bg-white absolute top-0 w-screen h-10 z-3"
@@ -79,27 +80,32 @@ export default function CustomRequestForm({
             "linear-gradient(to bottom, white, rgba(255, 255, 255, 0))",
         }}
       />
-      <div className="hero-content flex-col text-center p-12 max-w-[64rem] mt-16">
-        <div className="flex flex-col  items-center  pr-8">
+      <div
+        className="hero-content flex-col text-center lg:p-12 sm:p-6 p-3 xl:max-w-[80%] max-w-[100%] mt-16 
+   "
+      >
+        {/* xl:bg-yellow-500 lg:bg-green-500 md:bg-blue-500 sm:bg-red-500  bg-pink-500 */}
+
+        <div className="flex flex-col  items-center">
           <OverlayText
             textSize={8}
             textColor="white"
-            style={{ fontSize: "3em" }}
+            className="h2"
+            // style={{ fontSize: "3em" }}
           >
             Submit a Custom Request
           </OverlayText>
-          <p className="py-6">
+          <p className="md:py-6 py-4">
             TODO: Design your own flower shelf to be custom made with your
             design or submit a custom request for jewlery pieces. // TODO: add
             something about submissions status (Drafts are aditable)
           </p>
         </div>
         {/* <div className="flex items-center justify-center px-16 md:px-4  bg-white shadow-md w-full rounded-lg p-8"> */}
-
         <FormProvider {...methods}>
-          <div className="m-8 bg-white bg-opacity-60 relative space-y-4  overflow-y-auto shadow-lg rounded-lg w-full">
-            <form className="p-12 flex flex-col text-left">
-              <div className="grid grid-cols-2 gap-4 my-4">
+          <div className="my-2 bg-white bg-opacity-60 relative space-y-4  overflow-y-auto shadow-lg rounded-lg w-full">
+            <form className="lg:p-12 sm:p-6 p-3 flex flex-col text-left">
+              <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 my-4">
                 <Input
                   id="name"
                   label="Name"
@@ -117,7 +123,7 @@ export default function CustomRequestForm({
                   required
                 />
               </div>
-              <div className="grid grid-cols-2 gap-4 my-4">
+              <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 my-4">
                 <div>
                   <label>Product Type:</label>
                   <ItemTypeSelector />

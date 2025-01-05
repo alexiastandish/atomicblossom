@@ -13,7 +13,7 @@ export default async function page(props) {
   // TODO add color of shelf
   // xl:bg-yellow-500 lg:bg-green-500 md:bg-blue-500 sm:bg-red-500
   return (
-    <div className=" flex flex-col ">
+    <div className="flex flex-col ">
       <section className="h-screen hero flex items-center justify-center ">
         <div className="hero-content lg:text-left lg:flex-row sm:max-md:flex-col flex-col text-center justify-between p-12">
           <div className="flex flex-col lg:items-start	md:items-center sm:items-center lg:w-1/2 w-full z-10">

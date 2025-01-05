@@ -23,7 +23,9 @@ const OverlayText: React.FC<OverlayTextProps> = ({
 }) => {
   return (
     <h2
-      className={`text-shadow-pink font-display leading-tight	 font-${textWeight} text-${textAlign} text-${textColor} text-${textSize}xl ${className}`}
+      className={`text-shadow-pink font-display leading-tight	 font-${textWeight} text-${textAlign} text-${textColor} text-${textSize}xl ${
+        className ? className : ""
+      }`}
       style={style}
     >
       {children}

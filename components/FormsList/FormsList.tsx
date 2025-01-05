@@ -12,6 +12,7 @@ export default function FormsList({ forms }: { forms: DndForm[] }) {
       {forms.map((form) => {
         return (
           <div
+            key={form.id}
             className="p-5 m-5 bg-white rounded-lg flex items-center justify-between space-x-8  border-transparent border-2 hover:border-secondary  cursor-pointer"
             role="button"
             onClick={() => router.push(`customizations/builder/${form.id}`)}

@@ -17,6 +17,7 @@ import { MdSave } from "react-icons/md";
 import { uploadToFirebase } from "@/utils/helpers/uploadToFirebase";
 import { idGenerator } from "@/utils/helpers/idGenerator";
 import ShippingAddress from "./ShippingAddress";
+import { submitCustomRequest } from "@/actions/submitCustomRequest";
 
 // import "./styles.css";
 
@@ -25,11 +26,6 @@ export default function CustomRequestForm({
 }: {
   currentUser?: User;
 }) {
-  const test = async () => {
-    const response = await axios.post(`/api/custom-request-form`);
-    console.log("response", response);
-  };
-
   const methods = useForm<CustomRequestData & { address: Address }>({
     defaultValues,
   });
@@ -37,24 +33,27 @@ export default function CustomRequestForm({
   console.log("methods", methods);
 
   const onSubmit = async (data) => {
-    console.log("data", data);
     const formSubmissionId = idGenerator();
     const firebaseUploads = await uploadToFirebase(
       data.images,
       formSubmissionId
     );
-    console.log("firebaseUploads", firebaseUploads);
+    const payloadImages =
+      firebaseUploads &&
+      data.images.map((payloadImage, index) => {
+        return { ...payloadImage, data_url: firebaseUploads[index] };
+      });
+
     const payload = {
-      content: { ...data, images: firebaseUploads },
+      content: { ...data, length: data.length[0], images: payloadImages },
       address: data.address,
     };
-    // async request which may result error
+
     try {
-      // await fetch()
-      const response = await axios.post(`/api/custom-request-form`, payload);
+      const response = await submitCustomRequest(payload);
       console.log("response", response);
-    } catch (e) {
-      // handle your error
+    } catch (error) {
+      console.log("error", error);
     }
   };
 

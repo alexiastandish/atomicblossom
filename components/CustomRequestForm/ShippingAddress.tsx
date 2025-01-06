@@ -36,7 +36,7 @@ export default function ShippingAddress(props) {
             required
           />
           <Input
-            id="address.zip"
+            id="address.postal_code"
             label="Zip"
             // disabled={isLoading}
             register={register}

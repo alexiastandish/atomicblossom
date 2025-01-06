@@ -98,7 +98,7 @@ model DndFormSubmission {
 
 model CustomRequestSubmission {
     id         String              @id @default(auto()) @map("_id") @db.ObjectId
-    userId     String              @db.ObjectId
+    userId     String
     createDate DateTime            @default(now())
     content    CustomRequestData
     status     CustomRequestStatus @default(UNFULFILLED)
@@ -144,9 +144,7 @@ type ImageUploadMetadata {
 
 type Address {
     city        String
-    country     String
-    line1       String
-    line2       String?
+    address     String
     postal_code String
     state       String
 }

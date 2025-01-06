@@ -112,6 +112,7 @@ const config: Config = {
           "text-secondary": "#FB9A94",
           primary: "#00BDBB",
           secondary: "#FB9A94",
+          "text-warning": "#F08A00",
         },
       },
     ],

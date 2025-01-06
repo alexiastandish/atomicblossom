@@ -27,7 +27,8 @@ export default function ShelfBuilder({
 }: {
   formFlowers: FlowerElementInstance[];
 }) {
-  const { flowers, addFlower, moveFlower } = useShelfBuilder();
+  const { flowers, addFlower, moveFlower, resetEditFlower, removeFlower } =
+    useShelfBuilder();
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
   function handleDragEnd(ev: DragEndEvent) {
@@ -77,7 +78,7 @@ export default function ShelfBuilder({
               </ShelfDroppableArea>
             </div>
 
-            <SideRail>
+            <SideRail remove={removeFlower} collapse={resetEditFlower}>
               <FormFlowerConfig />
             </SideRail>
           </DndContext>

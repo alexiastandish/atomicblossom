@@ -14,7 +14,7 @@ export default function FormHeader({ form }: { form: DndForm | null }) {
         {form?.name}
       </h2>
       <div className="flex items-center gap-2">
-        <PreviewDialogueBtn />
+        {/* todo: <PreviewDialogueBtn /> */}
         {!form?.submitted && form?.name && form?.id && (
           <>
             <SaveFormBtn name={form?.name} id={form?.id} /> <PublishFormBtn />

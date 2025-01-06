@@ -36,13 +36,6 @@ export default function CustomRequestForm({
 
   console.log("methods", methods);
 
-  // id         String              @id @default(auto()) @map("_id") @db.ObjectId
-  // userId     String              @db.ObjectId
-  // createDate DateTime            @default(now())
-  // content    CustomRequestData
-  // status     CustomRequestStatus @default(UNFULFILLED)
-  // address    Address?
-
   const onSubmit = async (data) => {
     console.log("data", data);
     const formSubmissionId = idGenerator();
@@ -51,9 +44,15 @@ export default function CustomRequestForm({
       formSubmissionId
     );
     console.log("firebaseUploads", firebaseUploads);
+    const payload = {
+      content: { ...data, images: firebaseUploads },
+      address: data.address,
+    };
     // async request which may result error
     try {
       // await fetch()
+      const response = await axios.post(`/api/custom-request-form`, payload);
+      console.log("response", response);
     } catch (e) {
       // handle your error
     }

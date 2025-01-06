@@ -20,20 +20,25 @@ export default function FormFlowerConfig() {
   return (
     <div>
       {config.colors.length > 1 && (
-        <FormFlowerColor
-          config={config.colors}
-          // TODO add defaults
-          activeColor={editFlower.properties?.color}
+        <div className="flex flex-col">
+          <label>Flower Color:</label>
+          <FormFlowerColor
+            config={config.colors}
+            // TODO add defaults
+            activeColor={editFlower.properties?.color}
+            editIndex={editIndex}
+          />
+        </div>
+      )}
+      <div className="flex flex-col">
+        <label>Flower Size:</label>
+        <FormFlowerSize
+          minFlowerSize={flowers[type].size.minFlowerSize}
+          maxFlowerSize={flowers[type].size.maxFlowerSize}
+          activeSize={editFlower.properties?.size}
           editIndex={editIndex}
         />
-      )}
-      <FormFlowerSize
-        minFlowerSize={flowers[type].size.minFlowerSize}
-        maxFlowerSize={flowers[type].size.maxFlowerSize}
-        activeSize={editFlower.properties?.size}
-        editIndex={editIndex}
-      />
-      <button onClick={removeFlower}>Remove</button>
+      </div>
     </div>
   );
 }
